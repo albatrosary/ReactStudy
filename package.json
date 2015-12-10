@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/albatrosary/ReactStudy#readme",
   "dependencies": {
+    "bootstrap": "^3.3.6",
     "react": "^0.14.3",
-    "react-dom": "^0.14.3"
+    "react-dom": "^0.14.3",
+    "react-router": "^0.13.5"
   },
   "devDependencies": {
     "babel-preset-react": "^6.3.13"
