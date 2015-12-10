@@ -28,6 +28,7 @@ HTML
 
   <script src="node_modules/react/dist/react.min.js"></script>
   <script src="node_modules/react-dom/dist/react-dom.min.js"></script>
+  <script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
 </body>
 </html>
 ```
@@ -45,37 +46,9 @@ HTML
 
   <script src="https://fb.me/react-0.14.3.min.js"></script>
   <script src="https://fb.me/react-dom-0.14.3.min.js"></script>
+  <script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
 </body>
 </html>
-```
-
-## Simple development http server
-
-### node:
-
-```bash
-npm install live-server
-live-server
-```
-
-### node:
-
-```bash
-npm install http-server
-http-server
-```
-
-### Ruby
-
-```bash
-ruby -run -e httpd -- -p 8000
-```
- 
-### Python
-
-```bash
-python -m SimpleHTTPServer
-Check Module
 ```
 
 ## Add to the body tag of Index.html
@@ -100,3 +73,58 @@ setInterval(function() {
   );
 }, 50);
 ```
+
+## Offline Build
+
+But, Use a Babel instead of JSXTransformer
+
+```bash
+npm install --global babel-cli
+npm install babel-preset-react --save-dev
+```
+Compile
+
+```bash
+babel --presets react src/ --out-dir build/
+```
+
+(index.html)
+```html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>React Study</title>
+</head>
+<body>
+
+  <script src="node_modules/react/dist/react.min.js"></script>
+  <script src="node_modules/react-dom/dist/react-dom.min.js"></script>
+  <script src="build/app.js"></script>
+</body>
+</html>
+```
+
+(app.jsx)
+```javascript
+var ExampleApplication = React.createClass({
+  displayName: 'ExampleApplication',
+
+  render: function () {
+    var elapsed = Math.round(this.props.elapsed / 100);
+    var seconds = elapsed / 10 + (elapsed % 10 ? '' : '.0');
+    var message = 'React has been successfully running for ' + seconds + ' seconds.';
+
+    return React.createElement(
+      'p',
+      null,
+      message
+    );
+  }
+});
+var start = new Date().getTime();
+setInterval(function () {
+  ReactDOM.render(React.createElement(ExampleApplication, { elapsed: new Date().getTime() - start }), document.getElementById('container'));
+}, 50);
+```
+
