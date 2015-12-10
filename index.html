@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>React Study</title>
+</head>
+<body>
+  <div id="container"></div>
+
+  <script src="node_modules/react/dist/react.min.js"></script>
+  <script src="node_modules/react-dom/dist/react-dom.min.js"></script>
+  <script>
+    var ExampleApplication = React.createClass({
+      render: function() {
+        var elapsed = Math.round(this.props.elapsed  / 100);
+        var seconds = elapsed / 10 + (elapsed % 10 ? '' : '.0' );
+        var message =
+          'React has been successfully running for ' + seconds + ' seconds.';
+        return React.DOM.p(null, message);
+      }
+    });
+    var ExampleApplicationFactory = React.createFactory(ExampleApplication);
+    var start = new Date().getTime();
+    setInterval(function() {
+      ReactDOM.render(
+        ExampleApplicationFactory({elapsed: new Date().getTime() - start}),
+        document.getElementById('container')
+      );
+    }, 50);
+  </script>
+</body>
+</html>

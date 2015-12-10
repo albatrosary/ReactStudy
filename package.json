@@ -1,0 +1,24 @@
+{
+  "name": "ReactStudy",
+  "version": "1.0.0",
+  "description": "## Create a project folder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albatrosary/ReactStudy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/albatrosary/ReactStudy/issues"
+  },
+  "homepage": "https://github.com/albatrosary/ReactStudy#readme",
+  "dependencies": {
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3"
+  }
+}
