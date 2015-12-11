@@ -1,20 +1,8 @@
 # React Study
 
-## Create a project folder
-
-```bash
-mkdir SampleApp && cd $_
-```
-
 ## Install essential libraries
 
 ### Use npm
-
-```bash
-npm init -y
-npm install react --save
-npm install react-dom --save
-```
 
 HTML
 ```html
