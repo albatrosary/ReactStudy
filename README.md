@@ -13,7 +13,8 @@ HTML
   <title>React Study</title>
 </head>
 <body>
-
+  <div id="container"></div>
+  
   <script src="node_modules/react/dist/react.min.js"></script>
   <script src="node_modules/react-dom/dist/react-dom.min.js"></script>
   <script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
@@ -31,7 +32,8 @@ HTML
   <title>React Study</title>
 </head>
 <body>
-
+  <div id="container"></div>
+  
   <script src="https://fb.me/react-0.14.3.min.js"></script>
   <script src="https://fb.me/react-dom-0.14.3.min.js"></script>
   <script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
@@ -86,6 +88,7 @@ babel --presets react src/ --out-dir build/
   <title>React Study</title>
 </head>
 <body>
+  <div id="container"></div>
 
   <script src="node_modules/react/dist/react.min.js"></script>
   <script src="node_modules/react-dom/dist/react-dom.min.js"></script>
