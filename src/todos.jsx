@@ -32,6 +32,7 @@ var Todos = React.createClass({
             </div>
           </div>
         </form>
+        <hr />
         {/* Todos list */}
         <Todo todos={ this.state.todoData } onDelete={ this.deleteTodo } />
       </div>
