@@ -71,7 +71,7 @@ But, Use a Babel instead of JSXTransformer
 
 ```bash
 npm install --global babel-cli
-npm install babel-preset-react --save-dev
+npm install babel-preset-react@6.3.13 --save-dev
 ```
 Compile
 
